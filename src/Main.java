@@ -16,12 +16,13 @@ public class Main {
 
         int select;
         do {
-            System.out.println("*** Sirket Yonetim Sistemine Hos Geldiniz ***");
+            System.out.println("*** Insan Kaynaklari Yonetim Sistemine Hos Geldiniz ***");
             System.out.println("Yapmak istediginiz islemi secin...");
             System.out.println("1-Personel Ekleme");
             System.out.println("2-Personel Silme");
             System.out.println("3-Personel Lİstele");
             System.out.println("0-Cikis");
+            System.out.print("Seciminiz : ");
             select = scanner.nextInt();
             switch (select){
                 case 1:
@@ -46,7 +47,7 @@ public class Main {
                         Employee employee= new Employee(name,age, id,salary);
                         personService.addPerson(employee);
                     }else {
-                        System.out.println("Bolum : ");
+                        System.out.print("Bolum : ");
                         String departmant = scanner.nextLine();
                         Manager manager = new Manager(name,age,id,salary,departmant);
                         personService.addPerson(manager);
@@ -65,7 +66,7 @@ public class Main {
                         System.out.println("-------------------------------------");
                     }
                     break;
-                case 4:
+                case 0:
                     System.out.println("Tesekkur eder, yine bekleriz...");
                     break;
                 default:
