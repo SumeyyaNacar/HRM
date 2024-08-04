@@ -8,6 +8,8 @@ public class Main {
 
         start(personService, scanner);
 
+        scanner.close();
+
     }
 
     private static void start(PersonService personService, Scanner scanner) {
@@ -30,13 +32,13 @@ public class Main {
                     System.out.print("Isim : ");
                     String name=scanner.nextLine();
 
-                    System.out.println("Yas : ");
+                    System.out.print("Yas : ");
                     int age = scanner.nextInt();
 
-                    System.out.println("ID : ");
+                    System.out.print("ID : ");
                     int id= scanner.nextInt();
 
-                    System.out.println("Maas : ");
+                    System.out.print("Maas : ");
                     double salary = scanner.nextInt();
                     scanner.nextLine();
 
@@ -52,19 +54,23 @@ public class Main {
                     }
                     break;
                 case 2:
-                  
+                    System.out.print("Silmek istediginiz personel id girin: ");
+                    int removedId = scanner.nextInt();
+                    personService.removePerson(removedId);
+                    break;
+
                 case 3:
                     for (Person person: personService.displayAllPerson()){
                         person.displayDetails();
+                        System.out.println("-------------------------------------");
                     }
                     break;
+                case 4:
+                    System.out.println("Tesekkur eder, yine bekleriz...");
+                    break;
+                default:
+                    System.out.println("Hatali Giris!!!");
             }
-
-
-
-
-
-
 
         }while (select!=0);
     }
