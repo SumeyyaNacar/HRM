@@ -7,7 +7,7 @@ public interface IPersonService {
 
     void removePerson(int id);
 
-    List<Person> displayPerson();
+    List<Person> displayAllPerson();
 
 
 }
