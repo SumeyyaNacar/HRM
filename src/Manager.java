@@ -1,14 +1,36 @@
-public class Manager extends Person {
+public class Manager extends Employee {
 
     //abstract classi miras alan ve methodlari override eden class
-    public Manager(String name, int age, int id) {
-        super(name, age, id);
+    private String departmant;
+
+    //constructor
+    public Manager(String name, int age, int id, double salary, String departmant) {
+        super(name, age, id, salary);
+        this.departmant = departmant;
+    }
+
+    //getter-setter
+    public String getDepartmant() {
+        return departmant;
+    }
+
+    public void setDepartmant(String departmant) {
+        this.departmant = departmant;
     }
 
     @Override
     public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Department : "+ departmant);
 
     }
+    //toString
 
 
+    @Override
+    public String toString() {
+        return super.toString() + "Manager{" +
+                "departmant='" + departmant + '\'' +
+                '}';
+    }
 }
