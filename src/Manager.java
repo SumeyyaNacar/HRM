@@ -20,7 +20,10 @@ public class Manager extends Employee {
 
     @Override
     public void displayDetails() {
-        super.displayDetails();
+        System.out.println("Manager ID: "+ getId());
+        System.out.println("Manager name: "+ getName());
+        System.out.println("Manager age: "+ getAge());
+        System.out.println("Manager salary: "+ getSalary());
         System.out.println("Department : "+ departmant);
 
     }
